@@ -3,6 +3,9 @@
 using namespace std;
 
 bool IsSorted(int *arr,int size) {  
+    if (size==0){
+        return false;
+    }
     for (int i=0;i<size-1;i++) {
     if (arr[i]>arr[i+1]){
         return false;
@@ -20,10 +23,10 @@ cout<<"Sorted Array test passed.\n";
 }
 
 void testUnsortedArray() { 
-int arr[] = {5,8,7,3,1};
-bool result = IsSorted(arr, 5);
-assert(result == false);
-cout<<"UnSorted Array test passed.\n";
+    int arr[] = {5,8,7,3,1};
+    bool result = IsSorted(arr, 5);
+    assert(result == false);
+    cout<<"UnSorted Array test passed.\n";
 }
 
 void testDuplicatedArray() { 
@@ -58,7 +61,7 @@ cout<<"Negative Array test passed.\n";
 
 void testEmptyArray() { int arr[] = {};
 bool result = IsSorted(arr, 0);
-assert(result == true);
+assert(result == false);
 cout<<"Empty Array test passed.\n";
 }
 
