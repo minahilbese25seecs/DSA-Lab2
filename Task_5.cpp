@@ -2,10 +2,16 @@
 #include <iostream>
 using namespace std;
 
-
 bool IsSorted(int *arr,int size) {  
-return false;
+    for (int i=0;i<size-1;i++) {
+    if (arr[i]>arr[i+1]){
+        return false;
+    }
+    }
+    return true;
 }
+
+
 void testSortedArray() { 
 int arr[] = {1, 2, 3, 4, 5};
 bool result = IsSorted(arr, 5);
@@ -16,7 +22,7 @@ cout<<"Sorted Array test passed.";
 void testUnsortedArray() { 
 int arr[] = {5,8,7,3,1};
 bool result = IsSorted(arr, 5);
-assert(result == true);
+assert(result == false);
 cout<<"UnSorted Array test passed.";
 }
 
